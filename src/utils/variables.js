@@ -8,7 +8,6 @@ export const font = {
 
 export const radius = {
   small: '10px',
-  medium: '18px',
   large: '25px',
 }
 
@@ -21,4 +20,5 @@ export const margin = {
 
 export const color = {
   primary: '#ff6060',
+  secondary: '#F6F6F6',
 }

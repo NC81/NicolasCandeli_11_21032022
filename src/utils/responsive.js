@@ -1,7 +1,7 @@
 const size = {
   mobile: '480px',
   tablet: '767px',
-  laptop: '1024px',
+  laptop: '1040px',
 }
 
 export const media = {

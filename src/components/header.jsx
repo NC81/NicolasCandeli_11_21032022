@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { media } from '../utils/responsive'
 import { font, color } from '../utils/variables'
 
-const Banner = styled.header`
+const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   margin-bottom: 63px;
@@ -47,7 +47,7 @@ const NavbarLink = styled(NavLink)`
 
 export default function Header() {
   return (
-    <Banner role="banner">
+    <HeaderWrapper role="banner">
       <Logo src="logo_primary.svg" alt="kasa logo" />
       <Navigation>
         <List>
@@ -59,6 +59,6 @@ export default function Header() {
           </li>
         </List>
       </Navigation>
-    </Banner>
+    </HeaderWrapper>
   )
 }

@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: Montserrat, Helvetica, Sans-Serif;
-    font-size: ${font.medium};
+    font-size: ${font.small};
     font-weight: 500;
   }
 
