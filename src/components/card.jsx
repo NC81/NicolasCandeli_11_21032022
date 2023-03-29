@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { radius } from '../utils/variables'
-import { media } from '../utils/responsive'
+import { media, radius } from '../utils/constants'
 
 const Figure = styled.figure`
   position: relative;
@@ -47,7 +46,7 @@ export default function Card({ id, title, cover }) {
   const navigate = useNavigate()
 
   return (
-    <Figure onClick={() => navigate(`sheet/${id}`)}>
+    <Figure onClick={() => navigate(`../sheet/${id}`)}>
       <Image src={cover} alt={title} />
       <Figcaption>{title}</Figcaption>
     </Figure>

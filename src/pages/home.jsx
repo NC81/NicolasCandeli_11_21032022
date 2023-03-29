@@ -1,9 +1,8 @@
 import Card from '../components/card'
 import { useLoaderData } from 'react-router-dom'
 import styled from 'styled-components'
-import { radius, margin, color } from '../utils/variables'
-import { media } from '../utils/responsive'
-import Intro from '../components/intro'
+import { media, radius, margin, color } from '../utils/constants'
+import Banner from '../components/banner'
 
 const Gallery = styled.section`
   display: flex;
@@ -23,16 +22,14 @@ const Gallery = styled.section`
 `
 
 export default function Home() {
-  const { data } = useLoaderData()
-
   return (
-    <div>
-      <Intro />
+    <>
+      <Banner />
       <Gallery>
-        {data.map(({ id, title, cover }) => (
+        {useLoaderData().data.map(({ id, title, cover }) => (
           <Card key={id} id={id} title={title} cover={cover} />
         ))}
       </Gallery>
-    </div>
+    </>
   )
 }

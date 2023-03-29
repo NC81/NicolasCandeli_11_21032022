@@ -1,17 +1,14 @@
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { media } from '../utils/responsive'
-import { font, color } from '../utils/variables'
+import { media, font, color } from '../utils/constants'
+import logoPrimary from '../assets/logo_primary.svg'
 
 const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 63px;
-  ${media.laptop} {
-    margin-bottom: 35px;
-  }
-  ${media.mobile} {
-    margin-bottom: 16px;
+  margin-bottom: 20px;
+  ${media.tablet} {
+    margin-bottom: 27px;
   }
 `
 
@@ -48,14 +45,14 @@ const NavbarLink = styled(NavLink)`
 export default function Header() {
   return (
     <HeaderWrapper role="banner">
-      <Logo src="logo_primary.svg" alt="kasa logo" />
+      <Logo src={logoPrimary} alt="kasa logo" />
       <Navigation>
         <List>
           <li>
-            <NavbarLink to={'/'}>Accueil</NavbarLink>
+            <NavbarLink to={'home'}>Accueil</NavbarLink>
           </li>
           <li>
-            <NavbarLink to={`/about`}>A propos</NavbarLink>
+            <NavbarLink to={`about`}>A propos</NavbarLink>
           </li>
         </List>
       </Navigation>

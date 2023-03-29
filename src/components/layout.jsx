@@ -1,8 +1,7 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLoaderData } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from '../utils/globalStyles'
-import { media } from '../utils/responsive'
-import { margin } from '../utils/variables'
+import { media, margin } from '../utils/constants'
 import Header from './header'
 import Footer from './footer'
 
@@ -20,6 +19,9 @@ const Wrapper = styled.div`
 `
 
 export default function Layout() {
+  // eslint-disable-next-line no-unused-vars
+  const data = useLoaderData()
+
   return (
     <div>
       <GlobalStyle />

@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { media } from './responsive'
-import { font } from './variables'
+import { font } from './constants'
 
 export const GlobalStyle = createGlobalStyle`
   
@@ -18,15 +17,5 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style-type: none;
-  }
-
-  h1 {
-    font-size: ${font.huge};
-    ${media.laptop} {
-      font-size: ${font.large};
-    }
-    ${media.tablet} {
-      font-size: ${font.medium};
-    }
   }
 `
