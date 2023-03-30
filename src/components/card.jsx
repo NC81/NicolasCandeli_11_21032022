@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { media, radius } from '../utils/constants'
+import PropTypes from 'prop-types'
 
 const Figure = styled.figure`
   position: relative;
@@ -51,4 +52,10 @@ export default function Card({ id, title, cover }) {
       <Figcaption>{title}</Figcaption>
     </Figure>
   )
+}
+
+Card.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  cover: PropTypes.string,
 }

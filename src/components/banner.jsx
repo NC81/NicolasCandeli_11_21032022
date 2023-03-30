@@ -3,7 +3,7 @@ import { media, font, radius } from '../utils/constants'
 import { useLocation } from 'react-router-dom'
 import cliffs from '../assets/cliffs.png'
 
-const IntroWrapper = styled.section`
+const BannerWrapper = styled.section`
   height: 223px;
   margin: 63px 0 43px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -47,8 +47,8 @@ export default function Banner() {
   const location = useLocation()
 
   return location.pathname === '/home' ? (
-    <IntroWrapper img={cliffs} home>
+    <BannerWrapper img={cliffs} home>
       <Title home>Chez vous, partout et ailleurs</Title>
-    </IntroWrapper>
+    </BannerWrapper>
   ) : null
 }

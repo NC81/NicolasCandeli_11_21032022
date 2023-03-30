@@ -12,16 +12,6 @@ const SheetWrapper = styled.div`
 `
 
 const Title = styled.h1`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  ${media.tablet} {
-    margin-bottom: 10px;
-    gap: 5px;
-  }
-`
-
-const TitleName = styled.span`
   font-size: ${font.large};
   line-height: 51px;
   ${media.laptop} {
@@ -35,19 +25,21 @@ const TitleName = styled.span`
   }
 `
 
-const TitleLocation = styled.span`
+const Location = styled.p`
   font-size: ${font.small};
   line-height: 26px;
+  margin-bottom: 20px;
   ${media.laptop} {
     font-size: 16px;
   }
   ${media.tablet} {
     font-size: 14px;
     line-height: 20px;
+    margin: 5px 0 10px;
   }
 `
 
-const TagList = styled.ul`
+const TagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -100,7 +92,7 @@ const HostPicture = styled.img`
 
 const Ratings = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 9px;
   ${media.tablet} {
     gap: 7px;
   }
@@ -135,15 +127,13 @@ export default function Sheet() {
       <Carousel />
       <Presentation>
         <div>
-          <Title>
-            <TitleName>{ad.title}</TitleName>
-            <TitleLocation>{ad.location}</TitleLocation>
-          </Title>
-          <TagList>
+          <Title>{ad.title}</Title>
+          <Location>{ad.location}</Location>
+          <TagsList>
             {ad.tags.map((tag, index) => (
               <Tag key={index} tag={tag} />
             ))}
-          </TagList>
+          </TagsList>
         </div>
         <HostRatings>
           <Host>

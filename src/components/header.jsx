@@ -31,6 +31,11 @@ const NavbarLink = styled(NavLink)`
   margin-left: 60px;
   font-size: ${font.medium};
   color: ${color.primary};
+  text-decoration: none;
+  :active,
+  :hover {
+    text-decoration: underline;
+  }
   ${media.tablet} {
     font-size: ${font.small};
     margin-left: 25px;
@@ -44,7 +49,7 @@ const NavbarLink = styled(NavLink)`
 
 export default function Header() {
   return (
-    <HeaderWrapper role="banner">
+    <HeaderWrapper>
       <Logo src={logoPrimary} alt="kasa logo" />
       <Navigation>
         <List>

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { media, radius, margin, color } from '../utils/constants'
 import Banner from '../components/banner'
 
-const Gallery = styled.section`
+const Gallery = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 50px ${margin.large};

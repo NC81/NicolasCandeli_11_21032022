@@ -23,6 +23,7 @@ const CarouselWrapper = styled.header`
     margin-bottom: 15px;
   }
 `
+
 const Counter = styled.span`
   position: absolute;
   color: white;
@@ -62,29 +63,33 @@ export default function Carousel() {
 
   return (
     <CarouselWrapper img={ad.pictures[imageIndex]}>
-      <Counter>
-        {imageIndex + 1}/{ad.pictures.length}
-      </Counter>
-      <Button
-        href="#"
-        onClick={() =>
-          imageIndex === 0
-            ? updateImage(ad.pictures.length - 1)
-            : updateImage(imageIndex - 1)
-        }
-      >
-        <Arrow src={arrowLeft} alt="left arrow" />
-      </Button>
-      <Button
-        href="#"
-        onClick={() =>
-          imageIndex === ad.pictures.length - 1
-            ? updateImage(0)
-            : updateImage(imageIndex + 1)
-        }
-      >
-        <Arrow src={arrowRight} alt="right arrow" />
-      </Button>
+      {ad.pictures.length !== 1 ? (
+        <>
+          <Counter>
+            {imageIndex + 1}/{ad.pictures.length}
+          </Counter>
+          <Button
+            href="#"
+            onClick={() =>
+              imageIndex === 0
+                ? updateImage(ad.pictures.length - 1)
+                : updateImage(imageIndex - 1)
+            }
+          >
+            <Arrow src={arrowLeft} alt="left arrow" />
+          </Button>
+          <Button
+            href="#"
+            onClick={() =>
+              imageIndex === ad.pictures.length - 1
+                ? updateImage(0)
+                : updateImage(imageIndex + 1)
+            }
+          >
+            <Arrow src={arrowRight} alt="right arrow" />
+          </Button>
+        </>
+      ) : null}
     </CarouselWrapper>
   )
 }

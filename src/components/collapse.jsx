@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { font, color, margin } from '../utils/constants'
 import arrowUp from '../assets/arrow_up.svg'
 import arrowDown from '../assets/arrow_down.svg'
+import PropTypes from 'prop-types'
 
 const CollapseWrapper = styled.div`
   width: 46.5%;
@@ -67,10 +68,8 @@ export default function Collapse({ desc, list }) {
           <Arrow src={arrowDown} alt="down arrow" />
         )}
       </Title>
-
-      {open && desc ? (
-        <Content>{desc}</Content>
-      ) : open && list ? (
+      {open && desc && <Content>{desc}</Content>}
+      {open && list && (
         <Content>
           {' '}
           <ul>
@@ -79,7 +78,12 @@ export default function Collapse({ desc, list }) {
             ))}
           </ul>
         </Content>
-      ) : null}
+      )}
     </CollapseWrapper>
   )
+}
+
+Collapse.propTypes = {
+  desc: PropTypes.string,
+  list: PropTypes.array,
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media, color, radius } from '../utils/constants'
+import PropTypes from 'prop-types'
 
 const TagWrapper = styled.li`
   min-width: 115px;
@@ -20,4 +21,8 @@ const TagWrapper = styled.li`
 
 export default function Tag({ tag }) {
   return <TagWrapper>{tag}</TagWrapper>
+}
+
+Tag.propTypes = {
+  tag: PropTypes.string,
 }
