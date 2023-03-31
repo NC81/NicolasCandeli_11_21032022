@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { media, radius, margin, color } from '../utils/constants'
 import Banner from '../components/banner'
 
-const Gallery = styled.div`
+const Gallery = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 50px ${margin.large};
@@ -21,7 +21,7 @@ const Gallery = styled.div`
   }
 `
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Banner />

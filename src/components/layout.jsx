@@ -5,7 +5,7 @@ import { media, margin } from '../utils/constants'
 import Header from './header'
 import Footer from './footer'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   margin: ${margin.medium} ${margin.huge};
   ${media.laptop} {
     margin: ${margin.medium} ${margin.large};
@@ -23,13 +23,13 @@ export default function Layout() {
   const data = useLoaderData()
 
   return (
-    <div>
+    <>
       <GlobalStyle />
       <Wrapper>
         <Header />
         <Outlet />
       </Wrapper>
       <Footer />
-    </div>
+    </>
   )
 }

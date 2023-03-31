@@ -5,13 +5,13 @@ import { useState } from 'react'
 import arrowLeft from '../assets/arrow_left.svg'
 import arrowRight from '../assets/arrow_right.svg'
 
-const CarouselWrapper = styled.header`
+const CarouselWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 415px;
-  margin-bottom: 24px;
+  margin: 20px 0 24px;
   background-image: url(${(props) => props.img});
   background-size: cover;
   background-position: center;
@@ -20,7 +20,7 @@ const CarouselWrapper = styled.header`
     height: 255px;
   }
   ${media.tablet} {
-    margin-bottom: 15px;
+    margin: 27px 0 15px;
   }
 `
 

@@ -8,12 +8,12 @@ import PropTypes from 'prop-types'
 
 const CollapseWrapper = styled.div`
   width: 46.5%;
-  ${media.tablet} {
+  ${media.mobile} {
     width: 100%;
   }
 `
 
-const Title = styled.div`
+const Title = styled.h2`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,8 +21,9 @@ const Title = styled.div`
   height: 52px;
   color: white;
   padding: 0 13px 0 20px;
-  background: ${color.primary};
+  background-color: ${color.primary};
   border-radius: ${radius.small};
+  cursor: pointer;
   ${media.tablet} {
     font-size: 13px;
     height: 30px;
@@ -56,10 +57,10 @@ const Content = styled.div`
 `
 
 export default function Collapse({ desc, list }) {
-  const [open, resize] = useState(true)
+  const [open, resize] = useState(false)
 
   return (
-    <CollapseWrapper desc={desc} list={list}>
+    <CollapseWrapper>
       <Title onClick={() => (open ? resize(false) : resize(true))}>
         {desc ? 'Descripton' : 'Équipements'}
         {open ? (

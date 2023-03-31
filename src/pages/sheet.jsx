@@ -1,15 +1,10 @@
 import { useLoaderData, useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import { media, font, color } from '../utils/constants'
+import { media, font } from '../utils/constants'
 import Tag from '../components/tag'
 import Star from '../components/star'
 import Collapse from '../components/collapse'
 import Carousel from '../components/carousel'
-
-const SheetWrapper = styled.div`
-  color: ${color.primary};
-  font-size: ${font.small};
-`
 
 const Title = styled.h1`
   font-size: ${font.large};
@@ -117,13 +112,13 @@ const Informations = styled.section`
   gap: 10px;
 `
 
-export default function Sheet() {
+export default function SheetPage() {
   const routeParams = useParams()
   const ad = useLoaderData().data.find((el) => el.id === routeParams.id)
   const range = ['1', '2', '3', '4', '5']
 
   return (
-    <SheetWrapper>
+    <>
       <Carousel />
       <Presentation>
         <div>
@@ -155,6 +150,6 @@ export default function Sheet() {
         <Collapse desc={ad.description} />
         <Collapse list={ad.equipments} />
       </Informations>
-    </SheetWrapper>
+    </>
   )
 }

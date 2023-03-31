@@ -1,15 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { media, font, color } from '../utils/constants'
+import { media, font } from '../utils/constants'
 import logoPrimary from '../assets/logo_primary.svg'
 
 const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  ${media.tablet} {
-    margin-bottom: 27px;
-  }
 `
 
 const Logo = styled.img`
@@ -30,10 +26,8 @@ const List = styled.ul`
 const NavbarLink = styled(NavLink)`
   margin-left: 60px;
   font-size: ${font.medium};
-  color: ${color.primary};
   text-decoration: none;
-  :active,
-  :hover {
+  &.active {
     text-decoration: underline;
   }
   ${media.tablet} {
