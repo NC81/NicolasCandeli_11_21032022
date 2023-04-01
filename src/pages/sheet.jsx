@@ -147,8 +147,8 @@ export default function SheetPage() {
         </HostRatings>
       </Presentation>
       <Informations>
-        <Collapse desc={ad.description} />
-        <Collapse list={ad.equipments} />
+        <Collapse title="Descripton" desc={ad.description} />
+        <Collapse title="Équipements" list={ad.equipments} />
       </Informations>
     </>
   )

@@ -24,7 +24,6 @@ const CardLink = styled(Link)`
 
 const Title = styled.h2`
   position: absolute;
-  z-index: 1;
   left: 20px;
   bottom: 20px;
   color: white;

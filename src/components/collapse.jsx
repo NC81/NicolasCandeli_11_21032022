@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { media, radius } from '../utils/constants'
 import { useState } from 'react'
@@ -7,7 +8,7 @@ import arrowDown from '../assets/arrow_down.svg'
 import PropTypes from 'prop-types'
 
 const CollapseWrapper = styled.div`
-  width: 46.5%;
+  width: ${(props) => (props.page === '/about' ? '82.5%' : '47%')};
   ${media.mobile} {
     width: 100%;
   }
@@ -18,12 +19,19 @@ const Title = styled.h2`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  height: 52px;
-  color: white;
+  height: ${(props) => (props.page === '/about' ? '47px' : '52px')};
   padding: 0 13px 0 20px;
+  font-size: ${(props) =>
+    props.page === '/about' ? `${font.medium}` : `${font.small}`};
+  font-weight: 500;
+  color: white;
   background-color: ${color.primary};
-  border-radius: ${radius.small};
+  border-radius: ${(props) =>
+    props.page === '/about' ? `${radius.tiny}` : `${radius.small}`};
   cursor: pointer;
+  ${media.laptop} {
+    font-size: ${font.small};
+  }
   ${media.tablet} {
     font-size: 13px;
     height: 30px;
@@ -40,13 +48,17 @@ const Arrow = styled.img`
 `
 
 const Content = styled.div`
-  width: 100%;
   padding: ${margin.medium} ${margin.small} ${margin.small} ${margin.small};
   margin-top: -10px;
   background: ${color.secondary};
+  font-size: ${(props) =>
+    props.page === '/about' ? `${font.medium}` : `${font.small}`};
   font-weight: 400;
   line-height: 26px;
   border-radius: 0 0 ${radius.small} ${radius.small};
+  ${media.laptop} {
+    font-size: ${font.small};
+  }
   ${media.tablet} {
     font-size: ${font.tiny};
     margin-top: -5px;
@@ -56,20 +68,25 @@ const Content = styled.div`
   }
 `
 
-export default function Collapse({ desc, list }) {
+export default function Collapse({ title, desc, list }) {
+  const location = useLocation().pathname
   const [open, resize] = useState(false)
+  console.log(title)
 
   return (
-    <CollapseWrapper>
-      <Title onClick={() => (open ? resize(false) : resize(true))}>
-        {desc ? 'Descripton' : 'Équipements'}
+    <CollapseWrapper page={location}>
+      <Title
+        onClick={() => (open ? resize(false) : resize(true))}
+        page={location}
+      >
+        {title}
         {open ? (
           <Arrow src={arrowUp} alt="up arrow" />
         ) : (
           <Arrow src={arrowDown} alt="down arrow" />
         )}
       </Title>
-      {open && desc && <Content>{desc}</Content>}
+      {open && desc && <Content page={location}>{desc}</Content>}
       {open && list && (
         <Content>
           {' '}
@@ -85,6 +102,7 @@ export default function Collapse({ desc, list }) {
 }
 
 Collapse.propTypes = {
+  title: PropTypes.string,
   desc: PropTypes.string,
   list: PropTypes.array,
 }
