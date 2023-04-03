@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from '../utils/globalStyles'
 import { media, margin } from '../utils/constants'
@@ -19,9 +19,7 @@ export const Wrapper = styled.div`
 `
 
 export default function Layout() {
-  // eslint-disable-next-line no-unused-vars
-  const data = useLoaderData()
-
+  console.log('Layout')
   return (
     <>
       <GlobalStyle />

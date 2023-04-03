@@ -1,38 +1,40 @@
+// React/React Router
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import adsList from './data/ads.json'
+
+// Loaders
+import { adsListLoader } from './pages/home'
+import { valuesLoader } from './pages/about'
+import { adLoader } from './pages/sheet'
+
+// Components
 import Error from './pages/error'
 import Home from './pages/home'
 import About from './pages/about'
 import Sheet from './pages/sheet'
 import Layout from './components/layout'
 
-function rootLoader() {
-  const data = adsList
-  return { data }
-}
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    loader: rootLoader,
     errorElement: <Error />,
     children: [
       {
         path: 'home',
         element: <Home />,
-        loader: rootLoader,
+        loader: adsListLoader,
       },
       {
         path: 'about',
         element: <About />,
+        loader: valuesLoader,
       },
       {
         path: `sheet/:id`,
         element: <Sheet />,
-        loader: rootLoader,
+        loader: adLoader,
       },
     ],
   },

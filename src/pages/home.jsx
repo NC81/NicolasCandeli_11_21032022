@@ -1,5 +1,6 @@
 import { useLoaderData } from 'react-router-dom'
 import styled from 'styled-components'
+import adsList from '../data/ads.json'
 import { media, radius, margin, color } from '../utils/constants'
 import Banner from '../components/banner'
 import Card from '../components/card'
@@ -32,11 +33,14 @@ const HiddenCard = styled.div`
 `
 
 export default function HomePage() {
+  console.log('Home')
+  const { adsList } = useLoaderData()
+
   return (
     <>
       <Banner />
       <Gallery>
-        {useLoaderData().data.map(({ id, title, cover }) => (
+        {adsList.map(({ id, title, cover }) => (
           <Card key={id} id={id} title={title} cover={cover} />
         ))}
         <HiddenCard></HiddenCard>
@@ -44,4 +48,9 @@ export default function HomePage() {
       </Gallery>
     </>
   )
+}
+
+// Loader function
+export function adsListLoader() {
+  return { adsList }
 }

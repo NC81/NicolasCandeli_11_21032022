@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { media, font } from '../utils/constants'
 import logoWhite from '../assets/logo_white.svg'
 
-const StyledFooter = styled.footer`
+const FooterWrapper = styled.footer`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -35,9 +35,9 @@ const Text = styled.p`
 
 export default function Footer() {
   return (
-    <StyledFooter>
+    <FooterWrapper>
       <Logo src={logoWhite} alt="kasa logo" />
       <Text>© 2020 Kasa. All rights reserved</Text>
-    </StyledFooter>
+    </FooterWrapper>
   )
 }

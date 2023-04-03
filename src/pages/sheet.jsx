@@ -1,4 +1,5 @@
-import { useLoaderData, useParams } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
+import adsList from '../data/ads.json'
 import styled from 'styled-components'
 import { media, font } from '../utils/constants'
 import Tag from '../components/tag'
@@ -113,9 +114,9 @@ const Informations = styled.section`
 `
 
 export default function SheetPage() {
-  const routeParams = useParams()
-  const ad = useLoaderData().data.find((el) => el.id === routeParams.id)
-  const range = ['1', '2', '3', '4', '5']
+  console.log('Sheet')
+  const { ad } = useLoaderData()
+  const range = [1, 2, 3, 4, 5]
 
   return (
     <>
@@ -152,4 +153,15 @@ export default function SheetPage() {
       </Informations>
     </>
   )
+}
+
+// Loader function
+export function adLoader({ params }) {
+  console.log('params loader', params.id)
+  const { id } = params
+  const ad = adsList.find((el) => el.id === id)
+  if (ad === undefined) throw new Error('Error: data is undefined')
+  else {
+    return { ad }
+  }
 }

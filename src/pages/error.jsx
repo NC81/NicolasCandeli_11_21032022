@@ -1,5 +1,4 @@
-import { useRouteError } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link, useRouteError } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from '../utils/globalStyles'
 import { font, media } from '../utils/constants'

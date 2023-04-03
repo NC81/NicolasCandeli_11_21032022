@@ -69,14 +69,13 @@ const Content = styled.div`
 `
 
 export default function Collapse({ title, desc, list }) {
+  console.log('Collapse')
   const location = useLocation().pathname
-  const [open, resize] = useState(false)
-  console.log(title)
-
+  const [open, setOpen] = useState(false)
   return (
     <CollapseWrapper page={location}>
       <Title
-        onClick={() => (open ? resize(false) : resize(true))}
+        onClick={() => (open ? setOpen(false) : setOpen(true))}
         page={location}
       >
         {title}
@@ -86,8 +85,9 @@ export default function Collapse({ title, desc, list }) {
           <Arrow src={arrowDown} alt="down arrow" />
         )}
       </Title>
-      {open && desc && <Content page={location}>{desc}</Content>}
-      {open && list && (
+      {open && desc ? (
+        <Content page={location}>{desc}</Content>
+      ) : open && list ? (
         <Content>
           {' '}
           <ul>
@@ -96,7 +96,7 @@ export default function Collapse({ title, desc, list }) {
             ))}
           </ul>
         </Content>
-      )}
+      ) : null}
     </CollapseWrapper>
   )
 }

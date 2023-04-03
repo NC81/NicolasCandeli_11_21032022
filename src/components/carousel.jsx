@@ -57,8 +57,7 @@ const Arrow = styled.img`
 `
 
 export default function Carousel() {
-  const routeParams = useParams()
-  const ad = useLoaderData().data.find((el) => el.id === routeParams.id)
+  const { ad } = useLoaderData()
   const [imageIndex, updateImage] = useState(0)
 
   return (
