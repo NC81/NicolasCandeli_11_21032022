@@ -119,7 +119,7 @@ export default function SheetPage() {
   const range = [1, 2, 3, 4, 5]
 
   return (
-    <>
+    <main>
       <Carousel />
       <Presentation>
         <div>
@@ -151,7 +151,7 @@ export default function SheetPage() {
         <Collapse title="Descripton" desc={ad.description} />
         <Collapse title="Équipements" list={ad.equipments} />
       </Informations>
-    </>
+    </main>
   )
 }
 

@@ -20,14 +20,14 @@ export default function AboutPage() {
   const { values } = useLoaderData()
 
   return (
-    <>
+    <main>
       <Banner />
       <Section>
         {values.map((el) => (
           <Collapse key={el.id} title={el.title} desc={el.desc} />
         ))}
       </Section>
-    </>
+    </main>
   )
 }
 

@@ -8,6 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     color: ${color.primary};
   }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
   
   body {
     font-family: Montserrat, Helvetica, Sans-Serif;
