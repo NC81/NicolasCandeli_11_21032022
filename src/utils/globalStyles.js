@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    font-family: Montserrat, Helvetica, Sans-Serif;
+    font-family: 'Montserrat', Helvetica, Sans-Serif;
     font-size: ${font.small};
     font-weight: 500;
   }
@@ -25,7 +25,13 @@ export const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
 
+  h1 {
+    font-weight: 500;
+
+  }
+
   h2 {
     font-size: ${font.small};
+    font-weight: 500;
   }
 `

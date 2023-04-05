@@ -8,6 +8,8 @@ import arrowDown from '../assets/arrow_down.svg'
 import PropTypes from 'prop-types'
 
 const CollapseWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: ${(props) => (props.page === '/about' ? '82.5%' : '47%')};
   ${media.mobile} {
     width: 100%;
@@ -17,13 +19,12 @@ const CollapseWrapper = styled.div`
 const Title = styled.h2`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  position: relative;
-  height: ${(props) => (props.page === '/about' ? '47px' : '52px')};
-  padding: 0 13px 0 20px;
+  z-index: 1;
+  line-height: ${(props) => (props.page === '/about' ? '47px' : '52px')};
+  padding: ${(props) =>
+    props.page === '/about' ? '0 33px 0 18px' : '0 13px 0 20px'};
   font-size: ${(props) =>
     props.page === '/about' ? `${font.medium}` : `${font.small}`};
-  font-weight: 500;
   color: white;
   background-color: ${color.primary};
   border-radius: ${(props) =>
@@ -34,8 +35,8 @@ const Title = styled.h2`
   }
   ${media.tablet} {
     font-size: 13px;
-    height: 30px;
-    padding: 0 9px 0 12px;
+    line-height: 30px;
+    padding: 0 7px 0 12px;
     border-radius: ${radius.tiny};
   }
 `
@@ -48,6 +49,7 @@ const Arrow = styled.img`
 `
 
 const Content = styled.div`
+  height: 100%;
   padding: ${margin.medium} ${margin.small} ${margin.small} ${margin.small};
   margin-top: -10px;
   background: ${color.secondary};

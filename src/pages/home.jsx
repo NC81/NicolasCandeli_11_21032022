@@ -37,7 +37,7 @@ export default function HomePage() {
   const { adsList } = useLoaderData()
 
   return (
-    <main>
+    <>
       <Banner />
       <Gallery>
         {adsList.map(({ id, title, cover }) => (
@@ -46,7 +46,7 @@ export default function HomePage() {
         <HiddenCard></HiddenCard>
         <HiddenCard></HiddenCard>
       </Gallery>
-    </main>
+    </>
   )
 }
 

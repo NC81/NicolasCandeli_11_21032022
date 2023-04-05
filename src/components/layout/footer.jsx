@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { media, font } from '../utils/constants'
-import logoWhite from '../assets/logo_white.svg'
+import { media, font } from '../../utils/constants'
+import logoWhite from '../../assets/logo_white.svg'
 
 const FooterWrapper = styled.footer`
   display: flex;

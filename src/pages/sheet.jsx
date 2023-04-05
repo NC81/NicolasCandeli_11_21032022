@@ -1,8 +1,7 @@
 import { useLoaderData } from 'react-router-dom'
 import adsList from '../data/ads.json'
 import styled from 'styled-components'
-import { media, font } from '../utils/constants'
-import Tag from '../components/tag'
+import { media, font, radius, color } from '../utils/constants'
 import Star from '../components/star'
 import Collapse from '../components/collapse'
 import Carousel from '../components/carousel'
@@ -39,6 +38,23 @@ const TagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+`
+
+const Tag = styled.li`
+  min-width: 115px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  color: white;
+  background-color: ${color.primary};
+  border-radius: ${radius.small};
+  ${media.tablet} {
+    min-width: 84px;
+    line-height: 18px;
+    font-size: 10px;
+    border-radius: ${radius.tiny};
+  }
 `
 
 const HostRatings = styled.div`
@@ -88,7 +104,7 @@ const HostPicture = styled.img`
 
 const Ratings = styled.div`
   display: flex;
-  gap: 9px;
+  gap: 15px;
   ${media.tablet} {
     gap: 7px;
   }
@@ -119,7 +135,7 @@ export default function SheetPage() {
   const range = [1, 2, 3, 4, 5]
 
   return (
-    <main>
+    <>
       <Carousel />
       <Presentation>
         <div>
@@ -127,7 +143,7 @@ export default function SheetPage() {
           <Location>{ad.location}</Location>
           <TagsList>
             {ad.tags.map((tag, index) => (
-              <Tag key={index} tag={tag} />
+              <Tag key={index}>{tag}</Tag>
             ))}
           </TagsList>
         </div>
@@ -151,7 +167,7 @@ export default function SheetPage() {
         <Collapse title="Descripton" desc={ad.description} />
         <Collapse title="Équipements" list={ad.equipments} />
       </Informations>
-    </main>
+    </>
   )
 }
 

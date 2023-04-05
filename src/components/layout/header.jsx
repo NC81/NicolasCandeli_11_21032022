@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { media, font } from '../utils/constants'
-import logoPrimary from '../assets/logo_primary.svg'
+import { media, font } from '../../utils/constants'
+import logoPrimary from '../../assets/logo_primary.svg'
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -38,6 +38,9 @@ const NavbarLink = styled(NavLink)`
     text-transform: uppercase;
     font-size: ${font.tiny};
     margin-left: 10px;
+    &.home {
+      margin-left: 0;
+    }
   }
 `
 
@@ -48,7 +51,9 @@ export default function Header() {
       <Navigation>
         <List>
           <li>
-            <NavbarLink to={'home'}>Accueil</NavbarLink>
+            <NavbarLink className="home" to={'home'}>
+              Accueil
+            </NavbarLink>
           </li>
           <li>
             <NavbarLink to={`about`}>A propos</NavbarLink>

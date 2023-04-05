@@ -2,8 +2,8 @@ import { Link, useRouteError } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from '../utils/globalStyles'
 import { font, media } from '../utils/constants'
-import { Wrapper } from '../components/layout'
-import Header from '../components/header'
+import { Wrapper } from '../../src/components/layout/layout'
+import Header from '../../src/components/layout/header'
 
 const Section = styled.section`
   text-align: center;
@@ -20,6 +20,7 @@ const Title = styled.h1`
   margin-bottom: 66px;
   font-size: 288px;
   font-weight: 700;
+  line-height: 263px;
   ${media.laptop} {
     margin-bottom: 40px;
     font-size: 160px;

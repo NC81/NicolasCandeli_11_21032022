@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
-import { GlobalStyle } from '../utils/globalStyles'
-import { media, margin } from '../utils/constants'
+import { GlobalStyle } from '../../utils/globalStyles'
+import { media, margin } from '../../utils/constants'
 import Header from './header'
 import Footer from './footer'
 
@@ -25,7 +25,9 @@ export default function Layout() {
       <GlobalStyle />
       <Wrapper>
         <Header />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
       </Wrapper>
       <Footer />
     </>
