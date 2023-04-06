@@ -7,6 +7,7 @@ const FooterWrapper = styled.footer`
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   margin-top: auto;
   height: 209px;
   background-color: black;

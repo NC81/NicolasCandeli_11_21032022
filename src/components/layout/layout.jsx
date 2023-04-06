@@ -6,15 +6,18 @@ import Header from './header'
 import Footer from './footer'
 
 export const Wrapper = styled.div`
-  margin: ${margin.medium} ${margin.huge};
+  max-width: 1440px;
+  width: calc(100% - ${margin.huge}*2);
+  margin: ${margin.medium} auto;
   ${media.laptop} {
-    margin: ${margin.medium} ${margin.large};
+    width: calc(100% - ${margin.large}*2);
   }
   ${media.tablet} {
-    margin: ${margin.small} ${margin.medium};
+    width: calc(100% - ${margin.medium}*2);
+    margin: ${margin.small} auto;
   }
   ${media.mobile} {
-    margin: ${margin.small} ${margin.small};
+    width: calc(100% - ${margin.small}*2);
   }
 `
 
