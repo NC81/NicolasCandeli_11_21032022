@@ -7,8 +7,8 @@ export const font = {
 }
 
 export const radius = {
-  tiny: '5px',
-  small: '10px',
+  small: '5px',
+  medium: '10px',
   large: '25px',
 }
 

@@ -2,42 +2,50 @@ import { Link, useRouteError } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from '../utils/globalStyles'
 import { font, media } from '../utils/constants'
-import { Wrapper } from '../../src/components/layout/layout'
+import { PageWrapper } from '../../src/components/layout/layout'
 import Header from '../../src/components/layout/header'
 
-const Section = styled.section`
-  text-align: center;
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 169px 0 182px;
+  gap: 66px;
   ${media.laptop} {
     margin: 169px 0 133px;
+    gap: 40px;
   }
   ${media.tablet} {
-    margin: 195px 60px 133px;
+    margin: 195px 0 133px;
+    gap: 11px;
   }
 `
 
 const Title = styled.h1`
-  margin-bottom: 66px;
   font-size: 288px;
   font-weight: 700;
   line-height: 263px;
   ${media.laptop} {
-    margin-bottom: 40px;
     font-size: 160px;
+    line-height: 180px;
   }
   ${media.tablet} {
-    margin-bottom: 11px;
     font-size: 96px;
+    line-height: 137px;
   }
 `
 
 const Message = styled.p`
+  text-align: center;
   font-size: ${font.large};
   ${media.laptop} {
     font-size: ${font.medium};
   }
   ${media.tablet} {
     font-size: ${font.small};
+  }
+  ${media.mobile} {
+    width: 220px;
   }
 `
 
@@ -51,21 +59,21 @@ const FooterLink = styled(Link)`
   }
 `
 
-export default function ErrorPage() {
+export default function Error() {
   const error = useRouteError()
   console.error(error)
 
   return (
-    <Wrapper id="error-page">
+    <PageWrapper>
       <GlobalStyle />
       <Header />
-      <Section>
+      <Main>
         <Title>404</Title>
-        <Message>Oups! La page que vous demandez n'existe pas</Message>
-      </Section>
+        <Message>Oups! La page que vous demandez n'existe pas.</Message>
+      </Main>
       <Footer>
-        <FooterLink to={'home'}>Retournez sur la page d'accueil</FooterLink>
+        <FooterLink to={'home'}>Retourner sur la page d’accueil</FooterLink>
       </Footer>
-    </Wrapper>
+    </PageWrapper>
   )
 }

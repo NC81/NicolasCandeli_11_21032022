@@ -5,16 +5,16 @@ import { media, margin } from '../../utils/constants'
 import Header from './header'
 import Footer from './footer'
 
-export const Wrapper = styled.div`
-  max-width: 1440px;
+export const PageWrapper = styled.div`
+  max-width: 1240px;
   width: calc(100% - ${margin.huge}*2);
-  margin: ${margin.medium} auto;
+  margin: ${margin.medium} 0;
   ${media.laptop} {
     width: calc(100% - ${margin.large}*2);
   }
   ${media.tablet} {
     width: calc(100% - ${margin.medium}*2);
-    margin: ${margin.small} auto;
+    margin: ${margin.small} 0;
   }
   ${media.mobile} {
     width: calc(100% - ${margin.small}*2);
@@ -22,16 +22,13 @@ export const Wrapper = styled.div`
 `
 
 export default function Layout() {
-  console.log('Layout')
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
+      <PageWrapper>
         <Header />
-        <main>
-          <Outlet />
-        </main>
-      </Wrapper>
+        <Outlet />
+      </PageWrapper>
       <Footer />
     </>
   )

@@ -15,7 +15,7 @@ const CardLink = styled(Link)`
     url(${(props) => props.state});
   background-size: cover;
   background-position: center;
-  border-radius: ${radius.small};
+  border-radius: ${radius.medium};
   ${media.laptop} {
     flex: 1 255px;
     height: 255px;
@@ -24,10 +24,10 @@ const CardLink = styled(Link)`
 
 const Title = styled.h2`
   position: absolute;
+  width: 40%;
   left: 20px;
   bottom: 20px;
   color: white;
-  width: 40%;
 `
 
 export default function Card({ id, title, cover }) {

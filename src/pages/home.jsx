@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom'
-import styled from 'styled-components'
 import adsList from '../data/ads.json'
+import styled from 'styled-components'
 import { media, radius, margin, color } from '../utils/constants'
 import Banner from '../components/banner'
 import Card from '../components/card'
@@ -13,7 +13,7 @@ const Gallery = styled.section`
   background-color: ${color.secondary};
   border-radius: ${radius.large};
   ${media.laptop} {
-    gap: ${margin.medium};
+    gap: 35px;
     padding: 0;
     background-color: white;
   }
@@ -32,12 +32,11 @@ const HiddenCard = styled.div`
   }
 `
 
-export default function HomePage() {
-  console.log('Home')
+export default function Home() {
   const { adsList } = useLoaderData()
 
   return (
-    <>
+    <main>
       <Banner />
       <Gallery>
         {adsList.map(({ id, title, cover }) => (
@@ -46,11 +45,12 @@ export default function HomePage() {
         <HiddenCard></HiddenCard>
         <HiddenCard></HiddenCard>
       </Gallery>
-    </>
+    </main>
   )
 }
 
 // Loader function
 export function adsListLoader() {
-  return { adsList }
+  if (adsList == null) throw new Error(`Data in adsListLoader is ${adsList}`)
+  else return { adsList }
 }

@@ -9,9 +9,13 @@ const HeaderWrapper = styled.header`
 `
 
 const Logo = styled.img`
-  height: 68px;
+  width: 210px;
   ${media.tablet} {
-    height: 47px;
+    width: 170px;
+  }
+  ${media.mobile} {
+    width: 45%;
+    max-width: 145px;
   }
 `
 
@@ -21,10 +25,16 @@ const Navigation = styled.nav`
 
 const List = styled.ul`
   display: flex;
+  gap: 63px;
+  ${media.tablet} {
+    gap: 35px;
+  }
+  ${media.mobile} {
+    gap: 15px;
+  }
 `
 
 const NavbarLink = styled(NavLink)`
-  margin-left: 60px;
   font-size: ${font.medium};
   text-decoration: none;
   &.active {
@@ -32,15 +42,10 @@ const NavbarLink = styled(NavLink)`
   }
   ${media.tablet} {
     font-size: ${font.small};
-    margin-left: 25px;
   }
   ${media.mobile} {
     text-transform: uppercase;
     font-size: ${font.tiny};
-    margin-left: 10px;
-    &.home {
-      margin-left: 0;
-    }
   }
 `
 
@@ -51,9 +56,7 @@ export default function Header() {
       <Navigation>
         <List>
           <li>
-            <NavbarLink className="home" to={'home'}>
-              Accueil
-            </NavbarLink>
+            <NavbarLink to={'home'}>Accueil</NavbarLink>
           </li>
           <li>
             <NavbarLink to={`about`}>A propos</NavbarLink>

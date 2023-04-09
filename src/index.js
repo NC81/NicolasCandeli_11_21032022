@@ -2,12 +2,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
-
 // Loaders
 import { adsListLoader } from './pages/home'
-import { valuesLoader } from './pages/about'
-import { adLoader } from './pages/sheet'
-
+import { principlesLoader } from './pages/about'
+import { singleAdLoader } from './pages/sheet'
 // Components
 import Error from './pages/error'
 import Home from './pages/home'
@@ -23,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="home" replace />,
       },
       {
         path: 'home',
@@ -33,12 +31,12 @@ const router = createBrowserRouter([
       {
         path: 'about',
         element: <About />,
-        loader: valuesLoader,
+        loader: principlesLoader,
       },
       {
         path: `sheet/:id`,
         element: <Sheet />,
-        loader: adLoader,
+        loader: singleAdLoader,
       },
     ],
   },

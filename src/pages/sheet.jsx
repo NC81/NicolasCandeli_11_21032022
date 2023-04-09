@@ -6,6 +6,18 @@ import Star from '../components/star'
 import Collapse from '../components/collapse'
 import Carousel from '../components/carousel'
 
+const Presentation = styled.section`
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 24px;
+  ${media.tablet} {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+`
+
 const Title = styled.h1`
   font-size: ${font.large};
   line-height: 51px;
@@ -30,7 +42,7 @@ const Location = styled.p`
   ${media.tablet} {
     font-size: 14px;
     line-height: 20px;
-    margin: 5px 0 10px;
+    margin-bottom: 10px;
   }
 `
 
@@ -48,12 +60,12 @@ const Tag = styled.li`
   font-size: 14px;
   color: white;
   background-color: ${color.primary};
-  border-radius: ${radius.small};
+  border-radius: ${radius.medium};
   ${media.tablet} {
     min-width: 84px;
     line-height: 18px;
     font-size: 10px;
-    border-radius: ${radius.tiny};
+    border-radius: ${radius.small};
   }
 `
 
@@ -61,9 +73,6 @@ const HostRatings = styled.div`
   display: flex;
   flex-direction: column;
   gap: 27px;
-  ${media.laptop} {
-    gap: 14px;
-  }
   ${media.tablet} {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -82,6 +91,10 @@ const HostName = styled.span`
   width: min-content;
   text-align: right;
   line-height: 26px;
+  ${media.laptop} {
+    font-size: 16px;
+    line-height: 22px;
+  }
   ${media.tablet} {
     font-size: ${font.tiny};
     line-height: 17px;
@@ -110,32 +123,19 @@ const Ratings = styled.div`
   }
 `
 
-const Presentation = styled.section`
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-bottom: 24px;
-  ${media.tablet} {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-`
-
-const Informations = styled.section`
+const Details = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 `
 
-export default function SheetPage() {
-  console.log('Sheet')
+export default function Sheet() {
   const { ad } = useLoaderData()
   const range = [1, 2, 3, 4, 5]
 
   return (
-    <>
+    <main>
       <Carousel />
       <Presentation>
         <div>
@@ -163,21 +163,18 @@ export default function SheetPage() {
           </Ratings>
         </HostRatings>
       </Presentation>
-      <Informations>
+      <Details>
         <Collapse title="Descripton" desc={ad.description} />
         <Collapse title="Équipements" list={ad.equipments} />
-      </Informations>
-    </>
+      </Details>
+    </main>
   )
 }
 
 // Loader function
-export function adLoader({ params }) {
-  console.log('params loader', params.id)
+export function singleAdLoader({ params }) {
   const { id } = params
   const ad = adsList.find((el) => el.id === id)
-  if (ad === undefined) throw new Error('Error: data is undefined')
-  else {
-    return { ad }
-  }
+  if (ad == null) throw new Error(`Data in singleAdLoader is ${ad}`)
+  else return { ad }
 }

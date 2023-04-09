@@ -4,10 +4,10 @@ import { useLocation } from 'react-router-dom'
 import cliffs from '../assets/cliffs.png'
 import mountains from '../assets/mountains.png'
 
-const BannerWrapper = styled.div`
+const BannerWrapper = styled.header`
   height: 223px;
   margin: ${(props) =>
-    props.page === '/home' ? '63px 0 43px' : '44px 0 31px'};
+    props.page === '/home' ? '63px 0 43px' : '44px 0 30px'};
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(${(props) => props.img});
   background-size: cover;
@@ -20,8 +20,8 @@ const BannerWrapper = styled.div`
   ${media.tablet} {
     height: 111px;
     margin: ${(props) =>
-      props.page === '/home' ? '16px 0 22px' : '17px 0 19px'};
-    border-radius: ${radius.small};
+      props.page === '/home' ? '16px 0 22px' : '17px 0 20px'};
+    border-radius: ${radius.medium};
   }
 `
 
@@ -40,20 +40,20 @@ const Title = styled.h1`
   }
   ${media.mobile} {
     line-height: 24px;
-    width: 230px;
+    width: 235px;
     text-align: left;
     padding: 31px 0 0 16px;
   }
 `
 
 export default function Banner() {
-  const location = useLocation().pathname
+  const { pathname } = useLocation()
 
-  return location === '/home' ? (
-    <BannerWrapper img={cliffs} page={location}>
+  return pathname === '/home' ? (
+    <BannerWrapper img={cliffs} page={pathname}>
       <Title home>Chez vous, partout et ailleurs</Title>
     </BannerWrapper>
   ) : (
-    <BannerWrapper img={mountains} page={location}></BannerWrapper>
+    <BannerWrapper img={mountains} page={pathname}></BannerWrapper>
   )
 }

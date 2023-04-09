@@ -1,11 +1,11 @@
+import { useState } from 'react'
+import { useLoaderData } from 'react-router-dom'
 import styled from 'styled-components'
 import { media, radius } from '../utils/constants'
-import { useLoaderData, useParams } from 'react-router-dom'
-import { useState } from 'react'
 import arrowLeft from '../assets/arrow_left.svg'
 import arrowRight from '../assets/arrow_right.svg'
 
-const CarouselWrapper = styled.div`
+const CarouselWrapper = styled.header`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -15,12 +15,13 @@ const CarouselWrapper = styled.div`
   background-image: url(${(props) => props.img});
   background-size: cover;
   background-position: center;
-  border-radius: ${radius.small};
+  border-radius: ${radius.large};
   ${media.laptop} {
     height: 255px;
   }
   ${media.tablet} {
     margin: 27px 0 15px;
+    border-radius: ${radius.medium};
   }
 `
 
@@ -37,12 +38,12 @@ const Counter = styled.span`
 `
 
 const Button = styled.a`
-  padding: 0 23px;
+  padding: 23px;
   ${media.laptop} {
-    padding: 0 15px;
+    padding: 15px;
   }
   ${media.mobile} {
-    padding: 0 6px;
+    padding: 6px;
   }
 `
 
