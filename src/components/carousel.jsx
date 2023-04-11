@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
 import styled from 'styled-components'
 import { media, radius } from '../utils/constants'
 import arrowLeft from '../assets/arrow_left.svg'
@@ -57,22 +56,21 @@ const Arrow = styled.img`
   }
 `
 
-export default function Carousel() {
-  const { ad } = useLoaderData()
+export default function Carousel({ pictures }) {
   const [imageIndex, updateImage] = useState(0)
 
   return (
-    <CarouselWrapper img={ad.pictures[imageIndex]}>
-      {ad.pictures.length !== 1 ? (
+    <CarouselWrapper img={pictures[imageIndex]}>
+      {pictures.length > 1 ? (
         <>
           <Counter>
-            {imageIndex + 1}/{ad.pictures.length}
+            {imageIndex + 1}/{pictures.length}
           </Counter>
           <Button
             href="#"
             onClick={() =>
               imageIndex === 0
-                ? updateImage(ad.pictures.length - 1)
+                ? updateImage(pictures.length - 1)
                 : updateImage(imageIndex - 1)
             }
           >
@@ -81,7 +79,7 @@ export default function Carousel() {
           <Button
             href="#"
             onClick={() =>
-              imageIndex === ad.pictures.length - 1
+              imageIndex === pictures.length - 1
                 ? updateImage(0)
                 : updateImage(imageIndex + 1)
             }

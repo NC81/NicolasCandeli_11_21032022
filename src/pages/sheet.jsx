@@ -136,7 +136,7 @@ export default function Sheet() {
 
   return (
     <main>
-      <Carousel />
+      <Carousel pictures={ad.pictures} />
       <Presentation>
         <div>
           <Title>{ad.title}</Title>
