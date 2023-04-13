@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    @include tablet {
+      width: 170px;
+    }
+    @include mobile {
+      width: 45%;
+      max-width: 145px;
+    }
+  }
+  &__nav {
+    margin: auto 0;
+  }
+  &__list {
+    display: flex;
+    gap: 63px;
+    @include tablet {
+      gap: 35px;
+    }
+    @include mobile {
+      gap: 15px;
+    }
+  }
+  &__link {
+    font-size: $font-medium;
+    text-decoration: none;
+    &.active {
+      text-decoration: underline;
+    }
+    @include tablet {
+      font-size: $font-small;
+    }
+    @include mobile {
+      text-transform: uppercase;
+      font-size: $font-tiny;
+    }
+  }
+}

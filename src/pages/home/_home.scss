@@ -1,0 +1,25 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px $margin-large;
+  padding: 56px 50px 6px;
+  background-color: $color-secondary;
+  border-radius: $radius-large;
+  @include laptop {
+    gap: 35px;
+    padding: 0;
+    background-color: white;
+  }
+  @include tablet {
+    gap: $margin-small;
+  }
+  &__hidden-card {
+    flex: 1 340px;
+    @include laptop {
+      flex: 1 255px;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { useLoaderData } from 'react-router-dom'
 import principles from '../data/principles.json'
 import styled from 'styled-components'
 import { media } from '../utils/constants'
-import Banner from '../components/banner'
+import Banner from '../components/banner/banner'
 import Collapse from '../components/collapse'
 
 const Company = styled.div`

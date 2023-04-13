@@ -1,0 +1,15 @@
+.page-wrapper {
+  max-width: 1240px;
+  width: calc(100% - $margin-huge * 2);
+  margin: $margin-medium 0;
+  @include laptop {
+    width: calc(100% - $margin-large * 2);
+  }
+  @include tablet {
+    width: calc(100% - $margin-medium * 2);
+    margin: $margin-small 0;
+  }
+  @include mobile {
+    width: calc(100% - $margin-small * 2);
+  }
+}

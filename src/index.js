@@ -3,15 +3,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 // Loaders
-import { adsListLoader } from './pages/home'
+import { adsListLoader } from './pages/home/home'
 import { principlesLoader } from './pages/about'
 import { singleAdLoader } from './pages/sheet'
 // Components
 import Error from './pages/error'
-import Home from './pages/home'
+import Home from './pages/home/home'
 import About from './pages/about'
 import Sheet from './pages/sheet'
-import Layout from './components/layout/layout'
+import Layout from './layout/layout/layout'
+
+// import '../sass/'
 
 const router = createBrowserRouter([
   {

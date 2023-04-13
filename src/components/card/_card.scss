@@ -1,0 +1,34 @@
+.card {
+  position: relative;
+  flex: 1 340px;
+  height: 340px;
+  @include laptop {
+    flex: 1 255px;
+    height: 255px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    border-radius: $radius-medium;
+  }
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $radius-medium;
+  }
+  &__title {
+    position: absolute;
+    width: 40%;
+    left: 20px;
+    bottom: 20px;
+    color: white;
+  }
+}

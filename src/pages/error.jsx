@@ -2,8 +2,8 @@ import { Link, useRouteError } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from '../utils/globalStyles'
 import { font, media } from '../utils/constants'
-import { PageWrapper } from '../../src/components/layout/layout'
-import Header from '../../src/components/layout/header'
+// import { PageWrapper } from '../../src/layout/layout/layout'
+import Header from '../../src/layout/header/header'
 
 const Main = styled.main`
   display: flex;
@@ -64,7 +64,7 @@ export default function Error() {
   console.error(error)
 
   return (
-    <PageWrapper>
+    <div className="page-wrapper">
       <GlobalStyle />
       <Header />
       <Main>
@@ -74,6 +74,6 @@ export default function Error() {
       <Footer>
         <FooterLink to={'home'}>Retourner sur la page d’accueil</FooterLink>
       </Footer>
-    </PageWrapper>
+    </div>
   )
 }

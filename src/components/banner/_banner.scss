@@ -1,0 +1,62 @@
+.banner {
+  position: relative;
+  height: 223px;
+  @include laptop {
+    height: 150px;
+  }
+  @include tablet {
+    height: 111px;
+  }
+  &--home {
+    margin: 63px 0 43px;
+    @include laptop {
+      margin-top: 35px;
+    }
+    @include tablet {
+      margin: 16px 0 22px;
+    }
+  }
+  &--about {
+    margin: 44px 0 30px;
+    @include laptop {
+      margin-top: 30px;
+    }
+    @include tablet {
+      margin-top: 35px;
+      margin: 17px 0 20px;
+    }
+  }
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    border-radius: $radius-large;
+    @include tablet {
+      border-radius: $radius-medium;
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    line-height: 223px;
+    color: white;
+    text-align: center;
+    font-size: $font-huge;
+    @include laptop {
+      font-size: $font-large;
+      line-height: 150px;
+    }
+    @include tablet {
+      font-size: $font-medium;
+      line-height: 111px;
+    }
+    @include mobile {
+      line-height: 24px;
+      width: 235px;
+      text-align: left;
+      padding: 31px 0 0 16px;
+    }
+  }
+}

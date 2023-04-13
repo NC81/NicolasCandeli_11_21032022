@@ -1,0 +1,45 @@
+// Fonts
+$font-tiny: 12px;
+$font-small: 18px;
+$font-medium: 24px;
+$font-large: 36px;
+$font-huge: 48px;
+
+// Margins
+$margin-tiny: 10px;
+$margin-small: 20px;
+$margin-medium: 40px;
+$margin-large: 60px;
+$margin-huge: 100px;
+
+// Colors
+$color-primary: #ff6060;
+$color-secondary: #f6f6f6;
+
+// Radius
+$radius-small: 5px;
+$radius-medium: 10px;
+$radius-large: 25px;
+
+// Responsive
+$breakpoint: (
+  mobile: 480px,
+  tablet: 767px,
+  laptop: 1040px,
+);
+
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoint, mobile)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: map-get($breakpoint, tablet)) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: map-get($breakpoint, laptop)) {
+    @content;
+  }
+}
