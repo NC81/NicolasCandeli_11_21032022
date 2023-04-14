@@ -1,0 +1,89 @@
+.collap {
+  display: flex;
+  flex-direction: column;
+  &--home {
+    width: 47%;
+  }
+  &--about {
+    width: 82.5%;
+  }
+  @include mobile {
+    width: 100%;
+  }
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background-color: $color-primary;
+    &--home {
+      padding: 0 13px 0 20px;
+      border-radius: $radius-medium;
+    }
+    &--about {
+      padding: 0 33px 0 18px;
+      border-radius: $radius-small;
+    }
+    @include tablet {
+      padding: 0 7px 0 12px;
+      border-radius: $radius-small;
+    }
+  }
+  &__title {
+    color: white;
+    &--home {
+      line-height: 52px;
+    }
+    &--about {
+      font-size: $font-medium;
+      line-height: 47px;
+      @include laptop {
+        font-size: $font-small;
+      }
+    }
+    @include tablet {
+      font-size: 13px;
+      line-height: 30px;
+    }
+  }
+  &__icon {
+    width: 24px;
+    @include tablet {
+      width: 16px;
+    }
+  }
+  &__content {
+    height: 100%;
+    margin-top: -10px;
+    font-weight: 400;
+    background: $color-secondary;
+    &--home {
+      padding: 40px 12px 27px 20px;
+      line-height: 26px;
+      border-radius: 0 0 $radius-medium $radius-medium;
+    }
+    &--about {
+      padding: 36px 27px 20px 20px;
+      font-size: $font-medium;
+      line-height: 34px;
+      border-radius: 0 0 $radius-small $radius-small;
+      @include laptop {
+        font-size: $font-small;
+        line-height: 26px;
+      }
+    }
+    @include tablet {
+      font-size: $font-tiny;
+      margin-top: -5px;
+      line-height: 17px;
+      padding: 23px 7px 12px 12px;
+      border-radius: 0 0 $radius-small $radius-small;
+    }
+  }
+  &__list-item {
+    font-weight: 400;
+    @include tablet {
+      font-size: $font-tiny;
+    }
+  }
+}

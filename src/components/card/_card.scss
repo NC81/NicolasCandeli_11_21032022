@@ -19,16 +19,17 @@
     border-radius: $radius-medium;
   }
   &__image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: $radius-medium;
+    @include img-cover($radius-medium);
   }
   &__title {
     position: absolute;
     width: 40%;
+    line-height: 26px;
     left: 20px;
     bottom: 20px;
     color: white;
+    @include tablet {
+      bottom: 15px;
+    }
   }
 }

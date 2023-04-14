@@ -27,11 +27,8 @@
     }
   }
   &__image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    @include img-cover($radius-large);
     filter: brightness(70%);
-    border-radius: $radius-large;
     @include tablet {
       border-radius: $radius-medium;
     }

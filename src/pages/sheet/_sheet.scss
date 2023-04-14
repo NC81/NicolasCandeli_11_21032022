@@ -1,0 +1,127 @@
+.present {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 24px;
+  @include tablet {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.present-princ {
+  &__title {
+    font-size: $font-large;
+    line-height: 51px;
+    @include laptop {
+      font-size: $font-medium;
+      line-height: 38px;
+    }
+    @include tablet {
+      margin-bottom: 5px;
+      font-size: $font-small;
+      line-height: 26px;
+    }
+  }
+  &__location {
+    font-size: $font-small;
+    line-height: 26px;
+    margin-bottom: 20px;
+    @include laptop {
+      font-size: 16px;
+    }
+    @include tablet {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  &__tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__tag-item {
+    min-width: 115px;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    color: white;
+    background-color: $color-primary;
+    border-radius: $radius-medium;
+    @include tablet {
+      min-width: 84px;
+      line-height: 18px;
+      font-size: 10px;
+      border-radius: $radius-small;
+    }
+  }
+}
+
+.present-secon {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  @include tablet {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__host {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+  }
+  &__host-name {
+    width: min-content;
+    text-align: right;
+    line-height: 26px;
+    @include laptop {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    @include tablet {
+      font-size: $font-tiny;
+      line-height: 17px;
+    }
+  }
+  &__host-picture {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    @include laptop {
+      width: 48px;
+      height: 48px;
+    }
+    @include tablet {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__rating {
+    display: flex;
+    gap: 15px;
+    @include tablet {
+      gap: 7px;
+    }
+  }
+  &__rating-icon {
+    height: 24px;
+    @include laptop {
+      height: 18px;
+    }
+    @include tablet {
+      height: 13px;
+    }
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}

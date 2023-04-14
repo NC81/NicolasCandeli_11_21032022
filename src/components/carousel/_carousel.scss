@@ -1,0 +1,48 @@
+.carous {
+  position: relative;
+  height: 415px;
+  margin: 20px 0 24px;
+  @include laptop {
+    height: 255px;
+  }
+  @include tablet {
+    margin: 27px 0 15px;
+  }
+  &__image {
+    @include img-cover($radius-large);
+    @include tablet {
+      border-radius: $radius-medium;
+    }
+  }
+  &__counter {
+    position: absolute;
+    color: white;
+    width: 40px;
+    left: calc(50% - 20px);
+    bottom: 25px;
+    text-align: center;
+    @include mobile {
+      display: none;
+    }
+  }
+  &__btn {
+    position: absolute;
+    @include btn-carous(79px, 23px);
+    background-color: transparent;
+    @include laptop {
+      @include btn-carous(50px, 15px);
+    }
+    @include mobile {
+      @include btn-carous(20px, 6px);
+    }
+    &--prev {
+      left: 0;
+    }
+    &--next {
+      right: 0;
+    }
+  }
+  &__icon {
+    height: 100%;
+  }
+}

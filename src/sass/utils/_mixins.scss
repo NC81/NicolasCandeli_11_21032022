@@ -1,0 +1,33 @@
+// Images size, aspect ratio and radius
+@mixin img-cover($radius) {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: $radius;
+}
+
+// Carousel buttons size, padding and position
+@mixin btn-carous($height, $padding) {
+  height: $height + ($padding * 2);
+  padding: $padding;
+  top: calc(50% - ($height + ($padding * 2)) / 2);
+}
+
+// Media queries
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoint, mobile)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: map-get($breakpoint, tablet)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: map-get($breakpoint, laptop)) {
+    @content;
+  }
+}

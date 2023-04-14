@@ -1,8 +1,12 @@
 @import './utils/variables';
+@import './utils/mixins';
 @import './base/base';
 @import '../layout/layout/layout';
 @import '../layout/footer/footer';
 @import '../layout/header/header';
 @import '../components/banner/banner';
 @import '../components/card/card';
+@import '../components/carousel/carousel';
+@import '../components/collapse/collapse';
 @import '../pages/home/home';
+@import '../pages/sheet/sheet';

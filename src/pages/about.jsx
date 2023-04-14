@@ -3,7 +3,7 @@ import principles from '../data/principles.json'
 import styled from 'styled-components'
 import { media } from '../utils/constants'
 import Banner from '../components/banner/banner'
-import Collapse from '../components/collapse'
+import Collapse from '../components/collapse/collapse'
 
 const Company = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ export default function About() {
       <Banner />
       <Company>
         {principles.map((el) => (
-          <Collapse key={el.id} title={el.title} desc={el.desc} />
+          <Collapse key={el.id} page="about" title={el.title} desc={el.desc} />
         ))}
       </Company>
     </main>

@@ -5,12 +5,12 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 // Loaders
 import { adsListLoader } from './pages/home/home'
 import { principlesLoader } from './pages/about'
-import { singleAdLoader } from './pages/sheet'
+import { singleAdLoader } from './pages/sheet/sheet'
 // Components
 import Error from './pages/error'
 import Home from './pages/home/home'
 import About from './pages/about'
-import Sheet from './pages/sheet'
+import Sheet from './pages/sheet/sheet'
 import Layout from './layout/layout/layout'
 
 // import '../sass/'

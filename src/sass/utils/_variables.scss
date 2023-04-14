@@ -21,25 +21,9 @@ $radius-small: 5px;
 $radius-medium: 10px;
 $radius-large: 25px;
 
-// Responsive
+// Breakpoints
 $breakpoint: (
   mobile: 480px,
   tablet: 767px,
   laptop: 1040px,
 );
-
-@mixin mobile {
-  @media screen and (max-width: map-get($breakpoint, mobile)) {
-    @content;
-  }
-}
-@mixin tablet {
-  @media screen and (max-width: map-get($breakpoint, tablet)) {
-    @content;
-  }
-}
-@mixin laptop {
-  @media screen and (max-width: map-get($breakpoint, laptop)) {
-    @content;
-  }
-}
