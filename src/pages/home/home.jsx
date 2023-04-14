@@ -51,6 +51,7 @@ export default function Home() {
 
 // Loader function
 export function adsListLoader() {
-  if (adsList == null) throw new Error(`Data in adsListLoader is ${adsList}`)
+  if (adsList == null)
+    throw new Response(`Data in adsListLoader is ${adsList}`, { status: 404 })
   else return { adsList }
 }

@@ -193,6 +193,7 @@ export default function Sheet() {
 export function singleAdLoader({ params }) {
   const { id } = params
   const ad = adsList.find((el) => el.id === id)
-  if (ad == null) throw new Error(`Data in singleAdLoader is ${ad}`)
+  if (ad == null)
+    throw new Response(`Data in singleAdLoader is ${ad}`, { status: 404 })
   else return { ad }
 }

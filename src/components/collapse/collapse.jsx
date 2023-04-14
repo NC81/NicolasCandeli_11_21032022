@@ -86,22 +86,28 @@ export default function Collapse({ page, title, desc, list }) {
   return (
     <section className={`collap collap--${page}`}>
       <button
-        className={`collap__btn collap__btn--${page}`}
+        className={`collap-btn collap-btn--${page}`}
         onClick={() => (open ? setOpen(false) : setOpen(true))}
       >
-        <h2 className={`collap__title collap__title--${page}`}>{title}</h2>
+        <h2 className={`collap-btn__title collap-btn__title--${page}`}>
+          {title}
+        </h2>
         {open ? (
-          <img className="collap__icon" src={arrowUp} alt="up arrow icon" />
+          <img className="collap-btn__icon" src={arrowUp} alt="up arrow icon" />
         ) : (
-          <img className="collap__icon" src={arrowDown} alt="down arrow icon" />
+          <img
+            className="collap-btn__icon"
+            src={arrowDown}
+            alt="down arrow icon"
+          />
         )}
       </button>
       {open && desc ? (
-        <p className={`collap__content collap__content--${page}`}>{desc}</p>
+        <p className={`collap-content collap-content--${page}`}>{desc}</p>
       ) : open && list ? (
-        <ul className={`collap__content collap__content--${page}`}>
+        <ul className={`collap-content collap-content--${page}`}>
           {list.map((el, index) => (
-            <li className="collap__list-item" key={index}>
+            <li className="collap-content__list-item" key={index}>
               {el}
             </li>
           ))}

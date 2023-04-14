@@ -1,0 +1,55 @@
+.error-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 169px 0 182px;
+  gap: 66px;
+  @include laptop {
+    margin: 169px 0 133px;
+    gap: 40px;
+  }
+  @include tablet {
+    margin: 195px 0 133px;
+    gap: 11px;
+  }
+  &__title {
+    font-size: 288px;
+    font-weight: 700;
+    line-height: 263px;
+    @include laptop {
+      font-size: 160px;
+      line-height: 180px;
+    }
+    @include tablet {
+      font-size: 96px;
+      line-height: 137px;
+    }
+  }
+  &__message {
+    text-align: center;
+    font-size: $font-large;
+    line-height: 51px;
+    @include laptop {
+      font-size: $font-medium;
+      line-height: normal;
+    }
+    @include tablet {
+      font-size: $font-small;
+      line-height: 26px;
+    }
+    @include mobile {
+      width: 220px;
+    }
+  }
+}
+
+.error-footer {
+  text-align: center;
+  line-height: 26px;
+  &__link {
+    @include tablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

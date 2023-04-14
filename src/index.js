@@ -4,16 +4,14 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 // Loaders
 import { adsListLoader } from './pages/home/home'
-import { principlesLoader } from './pages/about'
+import { principlesLoader } from './pages/about/about'
 import { singleAdLoader } from './pages/sheet/sheet'
 // Components
-import Error from './pages/error'
+import Error from './pages/error/error'
 import Home from './pages/home/home'
-import About from './pages/about'
+import About from './pages/about/about'
 import Sheet from './pages/sheet/sheet'
 import Layout from './layout/layout/layout'
-
-// import '../sass/'
 
 const router = createBrowserRouter([
   {
