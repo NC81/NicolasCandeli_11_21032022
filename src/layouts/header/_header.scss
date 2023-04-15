@@ -1,4 +1,4 @@
-.header {
+.layout-header {
   display: flex;
   justify-content: space-between;
   &__logo {
@@ -30,11 +30,11 @@
       text-decoration: underline;
     }
     @include tablet {
-      font-size: $font-small;
+      @include set-font($font-small);
     }
     @include mobile {
       text-transform: uppercase;
-      font-size: $font-tiny;
+      @include set-font($font-tiny);
     }
   }
 }

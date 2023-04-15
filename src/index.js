@@ -11,7 +11,9 @@ import Error from './pages/error/error'
 import Home from './pages/home/home'
 import About from './pages/about/about'
 import Sheet from './pages/sheet/sheet'
-import Layout from './layout/layout/layout'
+import Layout from './layouts/layout/layout'
+// Styles
+import '../src/styles/main.css'
 
 const router = createBrowserRouter([
   {

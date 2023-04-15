@@ -18,11 +18,11 @@
     line-height: 263px;
     @include laptop {
       font-size: 160px;
-      line-height: 180px;
+      line-height: 160px;
     }
     @include tablet {
       font-size: 96px;
-      line-height: 137px;
+      line-height: 99px;
     }
   }
   &__message {
@@ -34,8 +34,7 @@
       line-height: normal;
     }
     @include tablet {
-      font-size: $font-small;
-      line-height: 26px;
+      @include set-font($font-small);
     }
     @include mobile {
       width: 220px;
@@ -45,11 +44,9 @@
 
 .error-footer {
   text-align: center;
-  line-height: 26px;
   &__link {
     @include tablet {
-      font-size: 14px;
-      line-height: 20px;
+      @include set-font(14px);
     }
   }
 }

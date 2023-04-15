@@ -6,11 +6,25 @@
   border-radius: $radius;
 }
 
-// Carousel buttons size, padding and position
+// Carousel buttons size, padding, and vertical position
 @mixin btn-carous($height, $padding) {
   height: $height + ($padding * 2);
   padding: $padding;
   top: calc(50% - ($height + ($padding * 2)) / 2);
+}
+
+// Fonts line-height
+@mixin set-font($size) {
+  @if ($size == 18px) {
+    font-size: 18px;
+    line-height: 26px;
+  } @else if ($size == 14px) {
+    font-size: 14px;
+    line-height: 20px;
+  } @else if ($size == 12px) {
+    font-size: 12px;
+    line-height: 17px;
+  }
 }
 
 // Media queries

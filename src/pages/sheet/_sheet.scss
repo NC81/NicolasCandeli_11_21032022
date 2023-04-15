@@ -1,4 +1,4 @@
-.present {
+.sheet-intro {
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -10,7 +10,7 @@
   }
 }
 
-.present-princ {
+.sheet-intro-pri {
   &__title {
     font-size: $font-large;
     line-height: 51px;
@@ -20,20 +20,17 @@
     }
     @include tablet {
       margin-bottom: 5px;
-      font-size: $font-small;
-      line-height: 26px;
+      @include set-font($font-small);
     }
   }
   &__location {
-    font-size: $font-small;
-    line-height: 26px;
-    margin-bottom: 20px;
+    @include set-font($font-small);
+    margin-bottom: $margin-small;
     @include laptop {
       font-size: 16px;
     }
     @include tablet {
-      font-size: 14px;
-      line-height: 20px;
+      @include set-font(14px);
       margin-bottom: 10px;
     }
   }
@@ -44,23 +41,24 @@
   }
   &__tag-item {
     min-width: 115px;
-    padding: 0 20px;
+    padding: 0 $margin-small;
     text-align: center;
-    line-height: 25px;
     font-size: 14px;
+    line-height: 25px;
     color: white;
     background-color: $color-primary;
     border-radius: $radius-medium;
     @include tablet {
       min-width: 84px;
-      line-height: 18px;
+      padding: 0 15px;
       font-size: 10px;
+      line-height: 18px;
       border-radius: $radius-small;
     }
   }
 }
 
-.present-secon {
+.sheet-intro-sec {
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -78,14 +76,12 @@
   &__host-name {
     width: min-content;
     text-align: right;
-    line-height: 26px;
     @include laptop {
       font-size: 16px;
       line-height: 22px;
     }
     @include tablet {
-      font-size: $font-tiny;
-      line-height: 17px;
+      @include set-font($font-tiny);
     }
   }
   &__host-picture {
@@ -119,7 +115,7 @@
   }
 }
 
-.details {
+.sheet-details {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

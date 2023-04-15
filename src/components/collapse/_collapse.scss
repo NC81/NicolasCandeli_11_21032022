@@ -1,7 +1,7 @@
-.collap {
+.collapse {
   display: flex;
   flex-direction: column;
-  &--home {
+  &--sheet {
     width: 47%;
   }
   &--about {
@@ -12,13 +12,13 @@
   }
 }
 
-.collap-btn {
+.collapse-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
   background-color: $color-primary;
-  &--home {
+  &--sheet {
     padding: 0 13px 0 20px;
     border-radius: $radius-medium;
   }
@@ -32,7 +32,7 @@
   }
   &__title {
     color: white;
-    &--home {
+    &--sheet {
       line-height: 52px;
     }
     &--about {
@@ -40,6 +40,7 @@
       line-height: 47px;
       @include laptop {
         font-size: $font-small;
+        line-height: 38px;
       }
     }
     @include tablet {
@@ -55,37 +56,34 @@
   }
 }
 
-.collap-content {
-  height: 100%;
+.collapse-content {
   margin-top: -10px;
   font-weight: 400;
   background: $color-secondary;
-  &--home {
+  &--sheet {
+    height: 100%;
     padding: 40px 12px 27px 20px;
-    line-height: 26px;
     border-radius: 0 0 $radius-medium $radius-medium;
   }
   &--about {
-    padding: 36px 27px 20px 20px;
+    padding: 36px 27px 12px 18px;
     font-size: $font-medium;
     line-height: 34px;
     border-radius: 0 0 $radius-small $radius-small;
     @include laptop {
-      font-size: $font-small;
-      line-height: 26px;
+      @include set-font($font-small);
     }
   }
   @include tablet {
-    font-size: $font-tiny;
+    @include set-font($font-tiny);
     margin-top: -5px;
-    line-height: 17px;
     padding: 23px 7px 12px 12px;
     border-radius: 0 0 $radius-small $radius-small;
   }
   &__list-item {
     font-weight: 400;
     @include tablet {
-      font-size: $font-tiny;
+      @include set-font($font-tiny);
     }
   }
 }

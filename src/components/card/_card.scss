@@ -24,9 +24,8 @@
   &__title {
     position: absolute;
     width: 40%;
-    line-height: 26px;
-    left: 20px;
-    bottom: 20px;
+    left: $margin-small;
+    bottom: $margin-small;
     color: white;
     @include tablet {
       bottom: 15px;
