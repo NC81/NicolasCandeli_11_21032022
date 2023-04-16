@@ -4,7 +4,6 @@ import arrowRight from '../../assets/arrow_right.svg'
 
 export default function Carousel({ pictures, title }) {
   const [imageIndex, updateImage] = useState(0)
-
   return (
     <header className="carousel">
       <img className="carousel__image" src={pictures[imageIndex]} alt={title} />

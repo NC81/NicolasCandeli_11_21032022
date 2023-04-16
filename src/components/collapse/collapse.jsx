@@ -4,7 +4,6 @@ import arrowDown from '../../assets/arrow_down.svg'
 
 export default function Collapse({ page, title, desc, list }) {
   const [open, setOpen] = useState(false)
-
   return (
     <section className={`collapse collapse--${page}`}>
       <button

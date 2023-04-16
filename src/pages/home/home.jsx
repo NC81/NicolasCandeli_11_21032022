@@ -5,7 +5,6 @@ import Card from '../../components/card/card'
 
 export default function Home() {
   const { adsList } = useLoaderData()
-
   return (
     <main>
       <Banner page="home" />

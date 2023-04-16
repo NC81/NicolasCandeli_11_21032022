@@ -8,7 +8,6 @@ import starEmpty from '../../assets/star_empty.svg'
 export default function Sheet() {
   const { ad } = useLoaderData()
   const range = ['1', '2', '3', '4', '5']
-
   return (
     <main>
       <Carousel pictures={ad.pictures} title={ad.title} />

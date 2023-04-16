@@ -5,7 +5,6 @@ import Collapse from '../../components/collapse/collapse'
 
 export default function About() {
   const { principles } = useLoaderData()
-
   return (
     <main>
       <Banner page="about" />

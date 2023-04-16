@@ -5,7 +5,6 @@ export default function Error() {
   const error = useRouteError()
   const { status } = useRouteError()
   console.error(error)
-
   return (
     <div className="page-wrapper">
       <Header />
