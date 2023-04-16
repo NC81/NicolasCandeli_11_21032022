@@ -1,5 +1,5 @@
-import cliffs from '../../assets/cliffs.png'
-import mountains from '../../assets/mountains.png'
+import cliffs from '../../assets/cliffs.jpg'
+import mountains from '../../assets/mountains.jpg'
 
 export default function Banner({ page }) {
   const path = page === 'home' ? cliffs : mountains

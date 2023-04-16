@@ -1,18 +1,14 @@
 .banner {
   position: relative;
   height: 223px;
-  @include laptop {
-    height: 150px;
-  }
-  @include tablet {
-    height: 111px;
-  }
   &--home {
     margin: 63px 0 43px;
     @include laptop {
+      height: 150px;
       margin-top: 35px;
     }
     @include tablet {
+      height: 111px;
       margin: 16px 0 22px;
     }
   }

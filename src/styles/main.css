@@ -144,26 +144,18 @@ button {
   position: relative;
   height: 223px;
 }
-@media screen and (max-width: 1040px) {
-  .banner {
-    height: 150px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .banner {
-    height: 111px;
-  }
-}
 .banner--home {
   margin: 63px 0 43px;
 }
 @media screen and (max-width: 1040px) {
   .banner--home {
+    height: 150px;
     margin-top: 35px;
   }
 }
 @media screen and (max-width: 767px) {
   .banner--home {
+    height: 111px;
     margin: 16px 0 22px;
   }
 }
