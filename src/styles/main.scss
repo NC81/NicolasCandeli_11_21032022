@@ -1,17 +1,18 @@
+// Utils
 @import './utils/variables';
 @import './utils/mixins';
-
+// Base
 @import './base/base';
-
+// Layouts
 @import '../layouts/layout/layout';
 @import '../layouts/footer/footer';
 @import '../layouts/header/header';
-
+// Components
 @import '../components/banner/banner';
 @import '../components/card/card';
 @import '../components/carousel/carousel';
 @import '../components/collapse/collapse';
-
+// Pages
 @import '../pages/home/home';
 @import '../pages/sheet/sheet';
 @import '../pages/about/about';
