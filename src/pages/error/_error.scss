@@ -30,8 +30,7 @@
     font-size: $font-large;
     line-height: 51px;
     @include laptop {
-      font-size: $font-medium;
-      line-height: normal;
+      @include set-font($font-medium);
     }
     @include tablet {
       @include set-font($font-small);

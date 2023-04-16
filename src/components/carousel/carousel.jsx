@@ -2,16 +2,12 @@ import { useState } from 'react'
 import arrowLeft from '../../assets/arrow_left.svg'
 import arrowRight from '../../assets/arrow_right.svg'
 
-export default function Carousel({ pictures }) {
+export default function Carousel({ pictures, title }) {
   const [imageIndex, updateImage] = useState(0)
 
   return (
-    <header className="carousel" img={pictures[imageIndex]}>
-      <img
-        className="carousel__image"
-        src={pictures[imageIndex]}
-        alt="Intérieur d'appartement"
-      />
+    <header className="carousel">
+      <img className="carousel__image" src={pictures[imageIndex]} alt={title} />
       {pictures.length > 1 ? (
         <>
           <span className="carousel__counter">

@@ -4,6 +4,6 @@
   align-items: center;
   gap: 30px;
   @include tablet {
-    gap: 20px;
+    gap: $margin-small;
   }
 }

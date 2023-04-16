@@ -24,7 +24,7 @@
     }
   }
   &__link {
-    font-size: $font-medium;
+    @include set-font($font-medium);
     text-decoration: none;
     &.active {
       text-decoration: underline;

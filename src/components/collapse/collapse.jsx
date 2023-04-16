@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import arrowUp from '../../assets/arrow_up.svg'
 import arrowDown from '../../assets/arrow_down.svg'
-import PropTypes from 'prop-types'
 
 export default function Collapse({ page, title, desc, list }) {
   const [open, setOpen] = useState(false)
@@ -34,10 +33,4 @@ export default function Collapse({ page, title, desc, list }) {
       ) : null}
     </section>
   )
-}
-
-Collapse.propTypes = {
-  title: PropTypes.string,
-  desc: PropTypes.string,
-  list: PropTypes.array,
 }

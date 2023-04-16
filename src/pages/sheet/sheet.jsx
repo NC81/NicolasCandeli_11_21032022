@@ -7,18 +7,18 @@ import starEmpty from '../../assets/star_empty.svg'
 
 export default function Sheet() {
   const { ad } = useLoaderData()
-  const range = [1, 2, 3, 4, 5]
+  const range = ['1', '2', '3', '4', '5']
 
   return (
     <main>
-      <Carousel pictures={ad.pictures} />
+      <Carousel pictures={ad.pictures} title={ad.title} />
       <section className="sheet-intro">
         <div className="sheet-intro-pri">
           <h1 className="sheet-intro-pri__title">{ad.title}</h1>
           <p className="sheet-intro-pri__location">{ad.location}</p>
           <ul className="sheet-intro-pri__tags-list">
             {ad.tags.map((tag, index) => (
-              <li className="sheet-intro-pri__tag-item" key={index}>
+              <li className="sheet-intro-pri__tag-item" key={`${tag}-${index}`}>
                 {tag}
               </li>
             ))}
@@ -34,20 +34,20 @@ export default function Sheet() {
             />
           </div>
           <div className="sheet-intro-sec__rating">
-            {range.map((el, index) =>
+            {range.map((el) =>
               el <= ad.rating ? (
                 <img
-                  key={index}
+                  className="sheet-intro-sec__rating-icon"
+                  key={el}
                   src={starFull}
                   alt="Étoile pleine"
-                  className="sheet-intro-sec__rating-icon"
                 />
               ) : (
                 <img
-                  key={index}
+                  className="sheet-intro-sec__rating-icon"
+                  key={el}
                   src={starEmpty}
                   alt="Étoile vide"
-                  className="sheet-intro-sec__rating-icon"
                 />
               )
             )}

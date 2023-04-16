@@ -71,6 +71,7 @@ button {
 .layout-footer__text {
   color: white;
   font-size: 24px;
+  line-height: 34px;
 }
 @media screen and (max-width: 1040px) {
   .layout-footer__text {
@@ -119,6 +120,7 @@ button {
 }
 .layout-header__link {
   font-size: 24px;
+  line-height: 34px;
   text-decoration: none;
 }
 .layout-header__link.active {
@@ -422,6 +424,11 @@ button {
     line-height: 26px;
   }
 }
+@media screen and (max-width: 480px) {
+  .collapse-content--about {
+    min-height: 144px;
+  }
+}
 @media screen and (max-width: 767px) {
   .collapse-content {
     font-size: 12px;
@@ -686,7 +693,7 @@ button {
 @media screen and (max-width: 1040px) {
   .error-main__message {
     font-size: 24px;
-    line-height: normal;
+    line-height: 34px;
   }
 }
 @media screen and (max-width: 767px) {

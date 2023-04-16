@@ -3,8 +3,7 @@ import mountains from '../../assets/mountains.png'
 
 export default function Banner({ page }) {
   const path = page === 'home' ? cliffs : mountains
-  const alt = page === 'home' ? 'Falaises de bord de mer' : 'Montagnes hautes'
-
+  const alt = page === 'home' ? 'Falaises de bord de mer' : 'Haute vallée'
   return (
     <header className={`banner banner--${page}`}>
       <img className="banner__image" src={path} alt={alt} />

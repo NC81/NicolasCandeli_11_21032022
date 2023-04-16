@@ -67,11 +67,13 @@
   }
   &--about {
     padding: 36px 27px 12px 18px;
-    font-size: $font-medium;
-    line-height: 34px;
+    @include set-font($font-medium);
     border-radius: 0 0 $radius-small $radius-small;
     @include laptop {
       @include set-font($font-small);
+    }
+    @include mobile {
+      min-height: 144px;
     }
   }
   @include tablet {

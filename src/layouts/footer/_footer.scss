@@ -16,7 +16,7 @@
   }
   &__text {
     color: white;
-    font-size: $font-medium;
+    @include set-font($font-medium);
     @include laptop {
       @include set-font($font-small);
     }

@@ -6,16 +6,19 @@
   border-radius: $radius;
 }
 
-// Carousel buttons size, padding, and vertical position
+// Carousel buttons size, padding and vertical position
 @mixin btn-carous($height, $padding) {
   height: $height + ($padding * 2);
   padding: $padding;
   top: calc(50% - ($height + ($padding * 2)) / 2);
 }
 
-// Fonts line-height
+// Set line-height with font-size
 @mixin set-font($size) {
-  @if ($size == 18px) {
+  @if ($size == 24px) {
+    font-size: 24px;
+    line-height: 34px;
+  } @else if ($size == 18px) {
     font-size: 18px;
     line-height: 26px;
   } @else if ($size == 14px) {

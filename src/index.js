@@ -6,15 +6,16 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { adsListLoader } from './pages/home/home'
 import { principlesLoader } from './pages/about/about'
 import { singleAdLoader } from './pages/sheet/sheet'
-// Components
+// Pages/Layout
 import Error from './pages/error/error'
 import Home from './pages/home/home'
 import About from './pages/about/about'
 import Sheet from './pages/sheet/sheet'
 import Layout from './layouts/layout/layout'
 // Styles
-import '../src/styles/main.css'
+import './styles/main.css'
 
+// Configure routes
 const router = createBrowserRouter([
   {
     path: '/',
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
   },
 ])
 
+// Render App
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
